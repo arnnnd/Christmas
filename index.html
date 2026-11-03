@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TV Festive Countdown 2026-2027</title>
     <!-- Tailwind CSS CDN -->
-    <script src="https://tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts & Lucide Icons -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Montserrat:wght@400;600;800;900&family=Great+Vibes&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Montserrat:wght@400;600;800;900&family=Great+Vibes&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <script>
         tailwind.config = {
@@ -48,26 +48,23 @@
 
         /* TV Glassmorphism Panels */
         .tv-glass {
-            background: #0c1821; /* Solid fallback for 2014 engines missing opacity hex */
-            background: rgba(12, 24, 33, 0.85);
-            -webkit-backdrop-filter: blur(16px);
+            background: rgba(12, 24, 33, 0.55);
             backdrop-filter: blur(16px);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1.5px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
         }
 
         .gold-border {
-            border-color: rgba(245, 158, 11, 0.6);
+            border-color: rgba(245, 158, 11, 0.35);
         }
 
         .gold-glow {
-            -webkit-text-shadow: 0 0 20px rgba(245, 158, 11, 0.8), 0 0 40px rgba(245, 158, 11, 0.4);
-            text-shadow: 0 0 20px rgba(245, 158, 11, 0.8), 0 0 40px rgba(245, 158, 11, 0.4);
+            text-shadow: 0 0 20px rgba(245, 158, 11, 0.6), 0 0 40px rgba(245, 158, 11, 0.2);
         }
 
         .red-glow {
-            -webkit-text-shadow: 0 0 20px rgba(239, 68, 68, 0.8), 0 0 40px rgba(239, 68, 68, 0.4);
-            text-shadow: 0 0 20px rgba(239, 68, 68, 0.8), 0 0 40px rgba(239, 68, 68, 0.4);
+            text-shadow: 0 0 20px rgba(239, 68, 68, 0.6), 0 0 40px rgba(239, 68, 68, 0.2);
         }
 
         /* Dynamic Canvas Layer */
@@ -82,10 +79,6 @@
         }
 
         /* Ticker Marquee Animation */
-        @-webkit-keyframes tickerAnimation {
-            0% { -webkit-transform: translateX(100vw); transform: translateX(100vw); }
-            100% { -webkit-transform: translateX(-100%); transform: translateX(-100%); }
-        }
         @keyframes tickerAnimation {
             0% { transform: translateX(100vw); }
             100% { transform: translateX(-100%); }
@@ -93,7 +86,6 @@
         .animate-ticker {
             display: inline-block;
             white-space: nowrap;
-            -webkit-animation: tickerAnimation 30s linear infinite;
             animation: tickerAnimation 30s linear infinite;
         }
     </style>
@@ -147,36 +139,36 @@
             <!-- Title Header -->
             <div class="text-center">
                 <span class="font-script text-2xl lg:text-3xl text-amber-400 block">Season's Magic</span>
-                <h2 class="font-cinzel text-3xl lg:text-5xl font-black text-amber-300 red-glow">
+                <h2 class="font-cinzel text-3xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-amber-200 to-amber-400 red-glow">
                     CHRISTMAS 2026
                 </h2>
                 <p class="text-xs lg:text-sm text-slate-300 uppercase tracking-widest mt-1 font-semibold">Friday, December 25, 2026</p>
             </div>
 
             <!-- Numbers Grid -->
-            <div class="flex justify-around items-center my-auto w-full">
-                <div class="bg-black/60 rounded-2xl p-4 text-center border border-white/10 w-1/5">
+            <div class="grid grid-cols-4 gap-3 lg:gap-4 my-auto">
+                <div class="bg-black/40 rounded-2xl p-3 lg:p-4 text-center border border-white/10">
                     <span id="xmas-days" class="font-cinzel text-4xl lg:text-6xl font-black text-amber-300 block">00</span>
                     <span class="text-[10px] lg:text-xs font-bold uppercase tracking-wider text-slate-400">Days</span>
                 </div>
-                <div class="bg-black/60 rounded-2xl p-4 text-center border border-white/10 w-1/5">
+                <div class="bg-black/40 rounded-2xl p-3 lg:p-4 text-center border border-white/10">
                     <span id="xmas-hours" class="font-cinzel text-4xl lg:text-6xl font-black text-red-400 block">00</span>
                     <span class="text-[10px] lg:text-xs font-bold uppercase tracking-wider text-slate-400">Hours</span>
                 </div>
-                <div class="bg-black/60 rounded-2xl p-4 text-center border border-white/10 w-1/5">
+                <div class="bg-black/40 rounded-2xl p-3 lg:p-4 text-center border border-white/10">
                     <span id="xmas-mins" class="font-cinzel text-4xl lg:text-6xl font-black text-emerald-400 block">00</span>
-                    <span class="text-[10px] lg:text-xs font-bold uppercase tracking-wider text-slate-400">Mins</span>
+                    <span class="text-[10px] lg:text-xs font-bold uppercase tracking-wider text-slate-400">Minutes</span>
                 </div>
-                <div class="bg-black/60 rounded-2xl p-4 text-center border border-white/10 w-1/5">
+                <div class="bg-black/40 rounded-2xl p-3 lg:p-4 text-center border border-white/10">
                     <span id="xmas-secs" class="font-cinzel text-4xl lg:text-6xl font-black text-amber-200 block">00</span>
-                    <span class="text-[10px] lg:text-xs font-bold uppercase tracking-wider text-slate-400">Secs</span>
+                    <span class="text-[10px] lg:text-xs font-bold uppercase tracking-wider text-slate-400">Seconds</span>
                 </div>
             </div>
 
             <!-- Subtitle/Footer Tag -->
-            <div class="flex items-center justify-center gap-2 text-xs lg:text-sm text-amber-300/80 font-cinzel font-bold">
-                <i data-lucide="gift" class="w-4 h-4 text-amber-400"></i>
-                <span id="xmas-message">COUNTING DOWN TO PEACE, WARMTH, AND HOLIDAY JOY</span>
+            <div class="flex items-center justify-center gap-2 text-xs lg:text-sm text-amber-300/80 font-cinzel">
+                <i data-lucide="gift" class="w-4 h-4 text-red-400"></i>
+                <span>Counting down to peace, warmth, and holiday joy</span>
             </div>
         </div>
 
@@ -184,14 +176,315 @@
         <div id="panelNY" class="tv-glass rounded-3xl p-6 lg:p-8 flex flex-col justify-between h-full border-t-4 border-t-amber-500 gold-border transition-all duration-500">
             <!-- Title Header -->
             <div class="text-center">
-                <span class="font-script text-2xl lg:text-3xl text-amber-400 block">A Grand New Dawn</span>
-                <h2 class="font-cinzel text-3xl lg:text-5xl font-black text-amber-400 gold-glow">
+                <span class="font-script text-2xl lg:text-3xl text-emerald-300 block">A Grand New Dawn</span>
+                <h2 class="font-cinzel text-3xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-100 to-amber-500 gold-glow">
                     NEW YEAR 2027
                 </h2>
                 <p class="text-xs lg:text-sm text-slate-300 uppercase tracking-widest mt-1 font-semibold">Friday, January 1, 2027</p>
             </div>
 
             <!-- Numbers Grid -->
-            <div class="flex justify-around items-center my-auto w-full">
-                <div class="bg-black/60 rounded-2xl p-4 text-center border border-white/10 w-1/5">
+            <div class="grid grid-cols-4 gap-3 lg:gap-4 my-auto">
+                <div class="bg-black/40 rounded-2xl p-3 lg:p-4 text-center border border-white/10">
                     <span id="ny-days" class="font-cinzel text-4xl lg:text-6xl font-black text-amber-300 block">00</span>
+                    <span class="text-[10px] lg:text-xs font-bold uppercase tracking-wider text-slate-400">Days</span>
+                </div>
+                <div class="bg-black/40 rounded-2xl p-3 lg:p-4 text-center border border-white/10">
+                    <span id="ny-hours" class="font-cinzel text-4xl lg:text-6xl font-black text-amber-400 block">00</span>
+                    <span class="text-[10px] lg:text-xs font-bold uppercase tracking-wider text-slate-400">Hours</span>
+                </div>
+                <div class="bg-black/40 rounded-2xl p-3 lg:p-4 text-center border border-white/10">
+                    <span id="ny-mins" class="font-cinzel text-4xl lg:text-6xl font-black text-emerald-400 block">00</span>
+                    <span class="text-[10px] lg:text-xs font-bold uppercase tracking-wider text-slate-400">Minutes</span>
+                </div>
+                <div class="bg-black/40 rounded-2xl p-3 lg:p-4 text-center border border-white/10">
+                    <span id="ny-secs" class="font-cinzel text-4xl lg:text-6xl font-black text-amber-200 block">00</span>
+                    <span class="text-[10px] lg:text-xs font-bold uppercase tracking-wider text-slate-400">Seconds</span>
+                </div>
+            </div>
+
+            <!-- Subtitle/Footer Tag -->
+            <div class="flex items-center justify-center gap-2 text-xs lg:text-sm text-emerald-300/80 font-cinzel">
+                <i data-lucide="party-popper" class="w-4 h-4 text-amber-400"></i>
+                <span>Welcoming a new year of endless opportunities</span>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- TV Ticker Bar (Bottom) -->
+    <footer class="w-full shrink-0 z-20 tv-glass rounded-xl py-2 px-4 overflow-hidden border border-amber-500/20">
+        <div class="w-full overflow-hidden whitespace-nowrap">
+            <div class="animate-ticker text-xs lg:text-sm font-semibold text-amber-200 tracking-wide flex items-center gap-8">
+                <span>🎄 Season's Greetings & Happy Holidays!</span>
+                <span>✨ Wishing you peace, love, and health as we countdown to 2027!</span>
+                <span>🎁 Santa Claus is making his list and checking it twice!</span>
+                <span>🎆 Celebrating new beginnings and glorious memories!</span>
+                <span>🌟 Happy Holidays from your Big Screen Countdown Display!</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Logic Engine -->
+    <script>
+        // Target Timestamps
+        const XMAS_2026 = new Date('December 25, 2026 00:00:00').getTime();
+        const NEWYEAR_2027 = new Date('January 1, 2027 00:00:00').getTime();
+
+        // Icons
+        lucide.createIcons();
+
+        // State Variables
+        let activeMode = 'dual'; // 'dual', 'xmas', 'ny'
+        let audioCtx = null;
+        let isAudioOn = false;
+        let chimeInterval = null;
+
+        // Countdown Elements
+        const xmasDays = document.getElementById('xmas-days');
+        const xmasHours = document.getElementById('xmas-hours');
+        const xmasMins = document.getElementById('xmas-mins');
+        const xmasSecs = document.getElementById('xmas-secs');
+
+        const nyDays = document.getElementById('ny-days');
+        const nyHours = document.getElementById('ny-hours');
+        const nyMins = document.getElementById('ny-mins');
+        const nySecs = document.getElementById('ny-secs');
+
+        const panelXmas = document.getElementById('panelXmas');
+        const panelNY = document.getElementById('panelNY');
+        const mainGrid = document.getElementById('mainGrid');
+
+        // Countdown Logic
+        function updateCountdowns() {
+            const now = new Date().getTime();
+
+            // Christmas 2026 calculation
+            const xmasDist = XMAS_2026 - now;
+            if (xmasDist > 0) {
+                xmasDays.textContent = String(Math.floor(xmasDist / (1000 * 60 * 60 * 24))).padStart(2, '0');
+                xmasHours.textContent = String(Math.floor((xmasDist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+                xmasMins.textContent = String(Math.floor((xmasDist % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+                xmasSecs.textContent = String(Math.floor((xmasDist % (1000 * 60)) / 1000)).padStart(2, '0');
+            }
+
+            // New Year 2027 calculation
+            const nyDist = NEWYEAR_2027 - now;
+            if (nyDist > 0) {
+                nyDays.textContent = String(Math.floor(nyDist / (1000 * 60 * 60 * 24))).padStart(2, '0');
+                nyHours.textContent = String(Math.floor((nyDist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+                nyMins.textContent = String(Math.floor((nyDist % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+                nySecs.textContent = String(Math.floor((nyDist % (1000 * 60)) / 1000)).padStart(2, '0');
+            }
+        }
+
+        // Mode Switcher (Layout Adapter)
+        function setMode(mode) {
+            activeMode = mode;
+
+            const btnDual = document.getElementById('btnDual');
+            const btnXmas = document.getElementById('btnXmas');
+            const btnNY = document.getElementById('btnNY');
+
+            // Reset buttons
+            btnDual.className = btnXmas.className = btnNY.className = "px-5 py-2 rounded-full text-xs lg:text-sm font-bold transition-all text-slate-300 hover:text-white";
+
+            if (mode === 'dual') {
+                btnDual.className = "px-5 py-2 rounded-full text-xs lg:text-sm font-bold transition-all bg-amber-500 text-slate-950 shadow-md";
+                mainGrid.className = "grid grid-cols-2 gap-6 my-auto z-20 flex-grow py-4 h-full max-h-[calc(100vh-160px)] items-center";
+                panelXmas.classList.remove('hidden');
+                panelNY.classList.remove('hidden');
+            } else if (mode === 'xmas') {
+                btnXmas.className = "px-5 py-2 rounded-full text-xs lg:text-sm font-bold transition-all bg-red-600 text-white shadow-md";
+                mainGrid.className = "grid grid-cols-1 gap-6 my-auto z-20 flex-grow py-4 h-full max-h-[calc(100vh-160px)] items-center max-w-3xl mx-auto w-full";
+                panelXmas.classList.remove('hidden');
+                panelNY.classList.add('hidden');
+            } else if (mode === 'ny') {
+                btnNY.className = "px-5 py-2 rounded-full text-xs lg:text-sm font-bold transition-all bg-amber-500 text-slate-950 shadow-md";
+                mainGrid.className = "grid grid-cols-1 gap-6 my-auto z-20 flex-grow py-4 h-full max-h-[calc(100vh-160px)] items-center max-w-3xl mx-auto w-full";
+                panelNY.classList.remove('hidden');
+                panelXmas.classList.add('hidden');
+            }
+        }
+
+        // Web Audio Gentle Holiday Bells Synthesizer
+        function playChimeNote() {
+            if (!audioCtx || !isAudioOn) return;
+
+            try {
+                // Harmonic Christmas Bells Frequencies (E pentatonic)
+                const freqs = [523.25, 659.25, 783.99, 987.77, 1046.50, 1318.51];
+                const freq = freqs[Math.floor(Math.random() * freqs.length)];
+
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+                gain.gain.setValueAtTime(0, audioCtx.currentTime);
+                gain.gain.linearRampToValueAtTime(0.06, audioCtx.currentTime + 0.08);
+                gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 2.8);
+
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                osc.start();
+                osc.stop(audioCtx.currentTime + 2.9);
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        function toggleAudio() {
+            const audioText = document.getElementById('audioText');
+            const audioIcon = document.getElementById('audioIcon');
+
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+
+            isAudioOn = !isAudioOn;
+
+            if (isAudioOn) {
+                audioText.textContent = "Ambience: ON";
+                audioIcon.setAttribute('data-lucide', 'volume-2');
+                lucide.createIcons();
+
+                playChimeNote();
+                chimeInterval = setInterval(playChimeNote, 2200);
+            } else {
+                audioText.textContent = "Ambience: OFF";
+                audioIcon.setAttribute('data-lucide', 'volume-x');
+                lucide.createIcons();
+                if (chimeInterval) clearInterval(chimeInterval);
+            }
+        }
+
+        // --- Canvas Animation (Snowfall & Fireworks) ---
+        const canvas = document.getElementById('fxCanvas');
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        // Particles
+        const flakes = [];
+        const fireworks = [];
+
+        class Flake {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * -height;
+                this.radius = Math.random() * 3.5 + 1;
+                this.speed = Math.random() * 1.2 + 0.6;
+                this.wind = Math.random() * 0.4 - 0.2;
+                this.opacity = Math.random() * 0.8 + 0.2;
+            }
+            update() {
+                this.y += this.speed;
+                this.x += this.wind;
+                if (this.y > height) {
+                    this.reset();
+                    this.y = 0;
+                }
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+                ctx.fill();
+            }
+        }
+
+        class FireworkParticle {
+            constructor(x, y, color) {
+                this.x = x;
+                this.y = y;
+                this.color = color;
+                const angle = Math.random() * Math.PI * 2;
+                const speed = Math.random() * 4 + 1;
+                this.vx = Math.cos(angle) * speed;
+                this.vy = Math.sin(angle) * speed;
+                this.alpha = 1;
+                this.decay = Math.random() * 0.02 + 0.015;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.vy += 0.03; // gravity
+                this.alpha -= this.decay;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${this.color}, ${this.alpha})`;
+                ctx.fill();
+            }
+        }
+
+        function createFirework() {
+            if (activeMode === 'xmas') return; // Only trigger on dual/ny
+            const x = Math.random() * width;
+            const y = Math.random() * (height * 0.5);
+            const colors = ['245, 158, 11', '239, 68, 68', '16, 185, 129', '250, 204, 21'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            for (let i = 0; i < 35; i++) {
+                fireworks.push(new FireworkParticle(x, y, color));
+            }
+        }
+
+        function initFX() {
+            for (let i = 0; i < 110; i++) {
+                flakes.push(new Flake());
+            }
+        }
+
+        function renderFX() {
+            ctx.clearRect(0, 0, width, height);
+
+            // Snowfall
+            for (let flake of flakes) {
+                flake.update();
+                flake.draw();
+            }
+
+            // Fireworks
+            for (let i = fireworks.length - 1; i >= 0; i--) {
+                const p = fireworks[i];
+                p.update();
+                p.draw();
+                if (p.alpha <= 0) {
+                    fireworks.splice(i, 1);
+                }
+            }
+
+            // Random fireworks trigger
+            if (Math.random() < 0.025) {
+                createFirework();
+            }
+
+            requestAnimationFrame(renderFX);
+        }
+
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        });
+
+        // Initialize Application
+        window.onload = function() {
+            updateCountdowns();
+            setInterval(updateCountdowns, 1000);
+            initFX();
+            renderFX();
+        };
+    </script>
+</body>
+</html>
